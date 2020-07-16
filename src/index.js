@@ -1,17 +1,50 @@
+// import the react ad reactdon libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+//Create a react component
+function getButtonText() {
+    return 'Click on me!';
+}
+ const App = () => {
+    //different types of variaables JSX can represent
+    const buttonNumber = 12345;
+    const buttonText = "Click Me";
+    const buttonTwoString = "hi" + "there"; 
+    const buttonTextObject = { text: 'Click me' }; 
+    const style = { backgroundColor: 'blue', color: 'white' };
+
+    return (
+        <div>
+            <label className="label" htmlFor="name">
+                Enter name:
+            </label>
+            <input id="name" type="text" />
+            <button style= {{ backgroundColor: 'blue', color: 'white' }}>
+                {buttonText}
+            </button>
+            <br/>
+            <button>
+                {getButtonText()}
+            </button>
+            <br/>
+            <button>
+                {buttonNumber}
+            </button>
+            <br/>
+            <button>
+                {buttonTwoString}
+            </button>
+            <br/>
+            <button style = {style}>
+                {buttonTextObject.text}
+            </button>
+        </div>
+    );
+ };
+
+//take the react component and show it on th screen
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <App />, 
+    document.querySelector('#root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
